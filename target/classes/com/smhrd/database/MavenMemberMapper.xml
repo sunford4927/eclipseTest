@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--  namespace : mapper 이름, mapper들 끼리 이름이 겹치면 안됨! -->
+<mapper namespace="MemberMapper">
+
+	<insert id="join" parameterType="MavenMember">
+		insert into mavenmember values(#{mId}, #{mPw}, #{mNickName})
+	</insert>
+
+	<select id="login" parameterType="MavenMember" resultType="MavenMember">
+		select * from mavenmember where id=#{mId} and pw=#{mPw}
+	</select>
+</mapper>
